@@ -3,12 +3,7 @@ package com.example.kakaologin;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
-import android.content.pm.Signature;
 import android.os.Bundle;
-import android.util.Base64;
-import android.util.Log;
 import android.widget.Toast;
 
 import com.kakao.auth.ISessionCallback;
@@ -18,8 +13,6 @@ import com.kakao.usermgmt.UserManagement;
 import com.kakao.usermgmt.callback.MeV2ResponseCallback;
 import com.kakao.usermgmt.response.MeV2Response;
 import com.kakao.util.exception.KakaoException;
-
-import java.security.MessageDigest;
 
 public class MainActivity extends AppCompatActivity {
     private ISessionCallback mSessionCallback;
@@ -54,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onSuccess(MeV2Response result)
                     {
                         // 로그인 성공시 실행구문 name, img, email을 보냄
-                       Intent intent = new Intent(MainActivity.this, SubActivity.class);
+                       Intent intent = new Intent(MainActivity.this, LoginActivity.class);
                         intent.putExtra("name", result.getKakaoAccount().getProfile().getNickname());
                         intent.putExtra("profileImg", result.getKakaoAccount().getProfile().getProfileImageUrl());
                         intent.putExtra("email", result.getKakaoAccount().getEmail());

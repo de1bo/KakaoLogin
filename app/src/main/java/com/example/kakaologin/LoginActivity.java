@@ -12,7 +12,7 @@ import com.bumptech.glide.Glide;
 import com.kakao.usermgmt.UserManagement;
 import com.kakao.usermgmt.callback.LogoutResponseCallback;
 
-public class getData extends AppCompatActivity
+public class LoginActivity extends AppCompatActivity
 {
     private String strNick, strProfileImg, strEmail;
 
@@ -20,7 +20,7 @@ public class getData extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sub);
+        setContentView(R.layout.activity_login);
 
         // onSuccess 에서 보낸 데이터 받는 부분
         Intent intent = getIntent();
@@ -28,9 +28,9 @@ public class getData extends AppCompatActivity
         strProfileImg = intent.getStringExtra("profileImg");
         strEmail = intent.getStringExtra("email");
 
-        TextView tv_nick = findViewById(R.id.tv_nickName);
+        TextView tv_nick = findViewById(R.id.tv_name);
         TextView tv_email = findViewById(R.id.tv_email);
-        ImageView iv_profile = findViewById(R.id.iv_profile);
+        ImageView iv_profile = findViewById(R.id.iv_profileimage);
 
 
         tv_nick.setText(strNick);
