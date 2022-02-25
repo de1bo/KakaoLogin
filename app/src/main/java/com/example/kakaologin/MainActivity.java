@@ -53,7 +53,6 @@ public class MainActivity extends AppCompatActivity {
                         intent.putExtra("email", result.getKakaoAccount().getEmail());
                         startActivity(intent);
 
-//                        Toast.makeText(MainActivity.this, "환영 합니다 !", Toast.LENGTH_SHORT).show();
                     }
                 });
             }

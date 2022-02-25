@@ -22,16 +22,14 @@ public class LoginActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        // onSuccess 에서 보낸 데이터 받는 부분
-        Intent intent = getIntent();
-        strNick = intent.getStringExtra("name");
-        strProfileImg = intent.getStringExtra("profileImg");
-        strEmail = intent.getStringExtra("email");
-
         TextView tv_nick = findViewById(R.id.tv_name);
         TextView tv_email = findViewById(R.id.tv_email);
         ImageView iv_profile = findViewById(R.id.iv_profileimage);
 
+        Intent intent = getIntent();
+        strNick = intent.getStringExtra("name");
+        strProfileImg = intent.getStringExtra("profileImg");
+        strEmail = intent.getStringExtra("email");
 
         tv_nick.setText(strNick);
         tv_email.setText(strEmail);
@@ -48,8 +46,7 @@ public class LoginActivity extends AppCompatActivity
                     @Override
                     public void onCompleteLogout()
                     {
-                        // 로그아웃 성공시 수행하는 지점
-                        finish(); // 현재 액티비티 종료
+                        finish();
                     }
                 });
             }
